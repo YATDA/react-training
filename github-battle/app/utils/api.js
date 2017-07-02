@@ -2,7 +2,7 @@ var axios = require('axios');
 
 function getProfile(username) {
   return axios
-    .get(`https://api.github.com/users/${username}${params}`)
+    .get(`https://api.github.com/users/${username}`)
     .then(function(user) {
       return user.data;
     });
@@ -10,7 +10,7 @@ function getProfile(username) {
 
 function getRepos(username) {
   return axios
-    .get(`https://api.github.com/users/${username}/repos${params}&per_page=100`)
+    .get(`https://api.github.com/users/${username}/repos?per_page=100`)
     .then(function(user) {
       return user.data;
     });
