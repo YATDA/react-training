@@ -97,3 +97,8 @@ a {
 .button:active {
   transform: translateY(1px);
 }
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
