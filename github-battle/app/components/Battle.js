@@ -1,15 +1,15 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 
-class PlayerInput extends React.component {
+class PlayerInput extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       username: ''
-    }
+    };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
     var value = event.target.value;
@@ -18,7 +18,7 @@ class PlayerInput extends React.component {
       return {
         username: value
       }
-    })
+    });
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -88,14 +88,14 @@ class Battle extends React.Component {
         <div className='row'>
           {!playerOneName &&
             <PlayerInput
-              id='playerOneName'
+              id='playerOne'
               label='Player One'
               onSubmit={this.handleSubmit}
             />}
 
           {!playerTwoName &&
             <PlayerInput 
-              id='playerTwoName'
+              id='playerTwo'
               label='Player Two'
               onSubmit={this.handleSubmit}
             />}
